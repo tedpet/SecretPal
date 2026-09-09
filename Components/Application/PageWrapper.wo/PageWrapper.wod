@@ -1,3 +1,87 @@
 something : WOString {
-	value = "Hi, this is the pagewrapper!";
+	value = "Hi";
+}
+
+IsIECheck: WOConditional {
+    condition = context.request.browser.isIE;//valid
+}
+
+IsNotIECheck: WOConditional {
+    condition = context.request.browser.isIE;//valid
+    negate = true;
+}
+
+TitleString: WOString {
+    value = ^title;
+}
+
+D2WCSSReference: ERMD2WCSSReference {
+    localContext = d2wContext;
+}
+
+AppStyleSheet: ERXStyleSheet {
+    framework = "app";
+    filename = "SecretPal.css";
+}
+
+HasCurrentPersonCheck: WOConditional {
+    condition = session.currentPerson;
+}
+
+LogoutLink: WOHyperlink {
+    directActionName = "logout";
+}
+
+HasCurrentPersonCheck2: WOConditional {
+    condition = session.currentPerson;
+}
+
+HomeLink: WOHyperlink {
+    pageName = "SPHomePage";
+}
+
+NoCurrentPersonCheck: WOConditional {
+    condition = session.currentPerson;
+    negate = true;
+}
+
+ShowBreadcrumbCheck: WOConditional {
+    condition = ^hideBreadcrumb;
+    negate = true;
+}
+
+BreadcrumbContent: ERXWOComponentContent {
+    templateName = "breadcrumb";
+}
+
+HasTitleCheck: WOConditional {
+    condition = ^title;
+}
+
+TitleString2: WOString {
+    value = ^title;
+}
+
+NoticesContainer: AjaxUpdateContainer {
+    id = "notices";
+}
+
+ErrorNotices: SPNotices {
+    noticeList = session.errors;
+    class = "errors";
+}
+
+NotificationNotices: SPNotices {
+    noticeList = session.notifications;
+    class = "notifications";
+}
+
+MainContent: ERXWOComponentContent {
+}
+
+ToolBar: WOLToolBar {
+}
+
+D2WStyleSheetInjector: ERMD2WStyleSheetInjector {
+    localContext = d2wContext;
 }
