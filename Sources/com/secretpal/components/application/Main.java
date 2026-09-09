@@ -3,7 +3,6 @@ package com.secretpal.components.application;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.secretpal.Application;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOResponse;
 
@@ -17,8 +16,11 @@ public class Main extends SPPage {
 		super(context);
 	}
 	
+	@SuppressWarnings("exports")
 	@Override
 	public void appendToResponse(WOResponse response, WOContext context) {
+		
+		LOG.debug("appendToResponse response = {}", response);
 		if (session().currentPerson() != null) {
 			ERXRedirect redirect = pageWithName(ERXRedirect.class);
 			redirect.setDirectActionName("default");

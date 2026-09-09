@@ -1,38 +1,38 @@
-<wo:PageWrapper title="Profile" hideBreadcrumb="$true">
+<WEBOBJECT NAME="PageWrapperComponent">
 	<div class="panel">
 		<div class="title">Profile</div>
-		
+
 		<div class="contents">
-			<wo:form>
+			<WEBOBJECT NAME="ProfileForm">
 				<div class="row">
 					<span class="label">Your Name</span>
-					<wo:textfield value="$person.name"/>
+					<WEBOBJECT NAME="NameField"></WEBOBJECT>
 				</div>
 
 				<div class="row">
 					<span class="label">Your Email</span>
-					<wo:textfield value="$person.emailAddress"/>
+					<WEBOBJECT NAME="EmailField"></WEBOBJECT>
 				</div>
 
 				<div class="row">
 					<span class="label">Old Password</span>
-					<wo:password value="$currentPassword"/>
+					<WEBOBJECT NAME="CurrentPasswordField"></WEBOBJECT>
 				</div>
 
 				<div class="row">
 					<span class="label">New Password</span>
-					<wo:password value="$password"/>
+					<WEBOBJECT NAME="PasswordField"></WEBOBJECT>
 				</div>
 
 				<div class="row">
 					<span class="label">Confirm</span>
-					<wo:password value="$confirmPassword"/>
+					<WEBOBJECT NAME="ConfirmPasswordField"></WEBOBJECT>
 				</div>
 
 				<div class="row">
-					<wo:submit action="$updateProfile" value="Update Profile"/> or <wo:WOHyperlink pageName="SPHomePage">cancel</wo:WOHyperlink>
+					<WEBOBJECT NAME="UpdateProfileButton"></WEBOBJECT> or <WEBOBJECT NAME="CancelLink">cancel</WEBOBJECT>
 				</div>
-			</wo:form>
+			</WEBOBJECT>
 		</div>
 	</div>
-</wo:PageWrapper>
+</WEBOBJECT>

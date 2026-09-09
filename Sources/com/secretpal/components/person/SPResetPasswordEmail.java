@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.secretpal.SPUtilities;
-import com.secretpal.components.application.PageWrapper;
+//import com.secretpal.components.application.PageWrapper;
 import com.secretpal.components.application.SPComponent;
 import com.secretpal.model.SPPerson;
 import com.webobjects.appserver.WOContext;

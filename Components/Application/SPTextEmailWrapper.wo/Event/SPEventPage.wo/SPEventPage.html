@@ -1,0 +1,30 @@
+<WEBOBJECT NAME="PageWrapperComponent">
+	<WEBOBJECT NAME="BreadcrumbTemplate">
+		<li><WEBOBJECT NAME="HomeLink">Home</WEBOBJECT></li>
+		<li class="separator"></li>
+		<li><WEBOBJECT NAME="GroupLink"><WEBOBJECT NAME="GroupNameString"></WEBOBJECT></WEBOBJECT></li>
+	</WEBOBJECT>
+
+	<div class="separatorSections">
+		<div class="section title callout">
+			<WEBOBJECT NAME="HasSecretPalsCheck">
+				<WEBOBJECT NAME="SecretPalsLoop">
+					Your Secret Pal for this event is <WEBOBJECT NAME="ExpandSecretPalsLink"><WEBOBJECT NAME="SecretPalNameString"></WEBOBJECT></WEBOBJECT>.
+				</WEBOBJECT>
+			</WEBOBJECT>
+			<WEBOBJECT NAME="NoSecretPalsCheck">
+				You haven't been assigned a secret pal yet. Check back soon!
+			</WEBOBJECT>
+		</div>
+
+		<WEBOBJECT NAME="MembershipsLoop">
+			<WEBOBJECT NAME="MembershipWishes"></WEBOBJECT>
+		</WEBOBJECT>
+
+		<WEBOBJECT NAME="CanEditCheck">
+			<div class="section callout">
+				Since you own this event, you can <WEBOBJECT NAME="EventEditLink">edit</WEBOBJECT> it.
+			</div>
+		</WEBOBJECT>
+	</div>
+</WEBOBJECT>

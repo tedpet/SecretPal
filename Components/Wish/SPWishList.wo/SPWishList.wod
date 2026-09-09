@@ -1,0 +1,134 @@
+SPWishListContainer: WOGenericContainer {
+    elementName = "div";
+    class = divClass;
+}
+
+HasItemsCheck: WOConditional {
+    condition = list.count;
+}
+
+ItemNameString: WOString {
+    value = itemName;
+}
+
+WishesLoop: WORepetition {
+    list = list;
+    item = wish;
+}
+
+ShowPurchasedCheck: WOConditional {
+    condition = showPurchased;
+}
+
+CanDeleteCheck: WOConditional {
+    condition = canDelete;
+}
+
+DeleteWishLink: AjaxUpdateLink {
+    updateContainerID = "_parent";
+    action = deleteWish;
+    onClickBefore = "confirm('Are you sure you want to delete this item?')";
+    title = "delete this item";
+}
+
+DeleteImage: WOImage {
+    filename = "btn_del.png";
+}
+
+CannotDeleteCheck: WOConditional {
+    condition = canDelete;
+    negate = true;
+}
+
+DeleteDisabledImage: WOImage {
+    filename = "btn_del_disabled.png";
+}
+
+UnbuyLink: AjaxUpdateLink {
+    updateContainerID = "_parent";
+    action = togglePurchased;
+    title = "mark this item NOT purchased";
+}
+
+UnbuyImage: WOImage {
+    filename = "unbuy.png";
+}
+
+NotDesireCheck: WOConditional {
+    condition = wish.desire;
+    negate = true;
+}
+
+SuggestedByString: WOString {
+    value = wish.suggestedBy.name;
+}
+
+DescriptionString: WOString {
+    value = wish.description;
+}
+
+NotShowPurchasedCheck: WOConditional {
+    condition = showPurchased;
+    negate = true;
+}
+
+CanDeleteCheck2: WOConditional {
+    condition = canDelete;
+}
+
+DeleteWishLink2: AjaxUpdateLink {
+    updateContainerID = "_parent";
+    action = deleteWish;
+    onClickBefore = "confirm('Are you sure you want to delete this item?')";
+    title = "delete this item";
+}
+
+DeleteImage2: WOImage {
+    filename = "btn_del.png";
+}
+
+CannotDeleteCheck2: WOConditional {
+    condition = canDelete;
+    negate = true;
+}
+
+DeleteDisabledImage2: WOImage {
+    filename = "btn_del_disabled.png";
+}
+
+NotMeCheck: WOConditional {
+    condition = me;
+    negate = true;
+}
+
+BuyLink: AjaxUpdateLink {
+    updateContainerID = "_parent";
+    action = togglePurchased;
+    title = "mark this item purchased";
+}
+
+BuyImage: WOImage {
+    filename = "buy.png";
+}
+
+NotDesireCheck2: WOConditional {
+    condition = wish.desire;
+    negate = true;
+}
+
+SuggestedByString2: WOString {
+    value = wish.suggestedBy.name;
+}
+
+DescriptionString2: WOString {
+    value = wish.description;
+}
+
+NoItemsCheck: WOConditional {
+    condition = list.count;
+    negate = true;
+}
+
+ItemNameString2: WOString {
+    value = itemName;
+}

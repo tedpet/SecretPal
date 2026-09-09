@@ -1,0 +1,18 @@
+SPTextEmailWrapperComponent: SPTextEmailWrapper {
+    title = "Invitation";
+}
+
+GroupNameString: WOString {
+    value = membership.group.name;
+    escapeHTML = false;
+}
+
+OwnerNameString: WOString {
+    value = membership.group.owner.name;
+    escapeHTML = false;
+}
+
+ConfirmationUrlString: WOString {
+    value = confirmationUrl;
+    escapeHTML = false;
+}

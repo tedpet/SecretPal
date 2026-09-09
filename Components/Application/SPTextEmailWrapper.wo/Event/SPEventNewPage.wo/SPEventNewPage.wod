@@ -1,0 +1,41 @@
+PageWrapperComponent: PageWrapper {
+    title = "Make a New Event";
+}
+
+BreadcrumbTemplate: ERXWOTemplate {
+    templateName = "breadcrumb";
+}
+
+HomeLink: ERXDataHyperlink {
+    pageName = "SPHomePage";
+}
+
+GroupLink: ERXDataHyperlink {
+    pageName = "SPGroupPage";
+    group = event.group;
+}
+
+GroupNameString: WOString {
+    value = event.group.name;
+}
+
+EventForm: WOForm {
+}
+
+EventNameField: WOTextField {
+    value = event.name;
+}
+
+EventDescriptionField: WOTextField {
+    value = event.description;
+}
+
+AddEventButton: WOSubmitButton {
+    action = addEvent;
+    value = "Do It";
+}
+
+CancelLink: ERXDataHyperlink {
+    pageName = "SPGroupPage";
+    group = group;
+}

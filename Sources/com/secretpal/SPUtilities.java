@@ -3,6 +3,7 @@ package com.secretpal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.secretpal.components.application.PageWrapper;
 import com.secretpal.components.person.SPGroupInvitationEmail;
 import com.secretpal.components.person.SPGroupInvitationTextEmail;
 import com.secretpal.components.person.SPResetPasswordEmail;
@@ -24,7 +25,7 @@ import er.javamail.ERMailDeliveryHTML;
 import er.javamail.ERMessage;
 
 public class SPUtilities {
-	private static final Logger log = LoggerFactory.getLogger(SPUtilities.class);
+	private static final Logger LOG = LoggerFactory.getLogger(SPUtilities.class);
 
 	public static final String CONFIRMATION_CODE_KEY = "confirmationCode";
 	public static final String RESET_PASSWORD_CODE_KEY = "resetPasswordCode";
@@ -67,7 +68,7 @@ public class SPUtilities {
 				editingContext.unlock();
 			}
 			editingContext.dispose();
-			log.error("Failed to send email to '{}'.", person.emailAddress(), e);
+			LOG.error("Failed to send email to '{}'.", person.emailAddress(), e);
 			errorNoticeList.addNotice("Failed to send email: " + e.getMessage());
 		}
 		return sentEmail;
@@ -185,7 +186,7 @@ public class SPUtilities {
 				editingContext.unlock();
 				editingContext.dispose();
 			}
-			log.error("Failed to send email.", failure);
+			LOG.error("Failed to send email.", failure);
 		}
 	}
 }

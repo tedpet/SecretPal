@@ -1,0 +1,101 @@
+<WEBOBJECT NAME="PageWrapperComponent">
+	<WEBOBJECT NAME="BreadcrumbTemplate">
+		<li><WEBOBJECT NAME="HomeLink">Home</WEBOBJECT></li>
+		<li class="separator"></li>
+		<li><WEBOBJECT NAME="GroupLink"><WEBOBJECT NAME="GroupNameString"></WEBOBJECT></WEBOBJECT></li>
+	</WEBOBJECT>
+
+	<div class="panel">
+		<div class="title">Edit Event</div>
+
+		<div class="contents">
+			<WEBOBJECT NAME="EventForm">
+				<div class="row">
+					<span class="label">Event Name</span>
+					<WEBOBJECT NAME="EventNameField"></WEBOBJECT>
+				</div>
+
+				<div class="row">
+					<span class="label">Description</span>
+					<WEBOBJECT NAME="EventDescriptionField"></WEBOBJECT>
+				</div>
+
+				<div class="row">
+					<WEBOBJECT NAME="SaveEventButton"></WEBOBJECT>
+				</div>
+			</WEBOBJECT>
+		</div>
+	</div>
+
+	<div class="panel" style="margin-top: 2em">
+		<div class="title">
+			No-No Receipients
+		</div>
+		<div class="contents">
+			<ul>
+			<WEBOBJECT NAME="MembershipsLoop">
+				<li>
+					<WEBOBJECT NAME="NoNoForm">
+					<h3>
+					<WEBOBJECT NAME="MembershipPersonNameString"></WEBOBJECT> cannot give to
+					<WEBOBJECT NAME="NoNoPersonPopup"></WEBOBJECT>
+					<WEBOBJECT NAME="AddNoNoPalButton"></WEBOBJECT>
+					</h3>
+
+					<WEBOBJECT NAME="HasNoNoPalsCheck">
+						<table>
+							<WEBOBJECT NAME="NoNoPalsLoop">
+								<tr>
+									<td class="actions"><WEBOBJECT NAME="RemoveNoNoPalLink"><WEBOBJECT NAME="DeleteImage"></WEBOBJECT></WEBOBJECT></td>
+									<td><WEBOBJECT NAME="ReceiverNameString"></WEBOBJECT></td>
+								</tr>
+							</WEBOBJECT>
+						</table>
+					</WEBOBJECT>
+
+					</WEBOBJECT>
+				</li>
+			</WEBOBJECT>
+			</ul>
+		</div>
+	</div>
+
+	<div class="separatorSections advanced" style="margin-top: 2em">
+		<div class="section">
+			<WEBOBJECT NAME="AssignPalsExpansion">
+				<div class="contents">
+					<p style="margin-top: 1em">
+					<WEBOBJECT NAME="HasAssignedPalsCheck">
+						You've already assigned secret pals for this event. If you do it again, you will <b>replaces</b> and <b>reassign</b> all existing pals!
+					</WEBOBJECT>
+					<WEBOBJECT NAME="HasNotAssignedPalsCheck">
+						You haven't assigned secret pals for this event. Make sure you've invited everyone before assigning pals or people will be left out of your event.
+					</WEBOBJECT>
+					</p>
+					<p>
+						<WEBOBJECT NAME="ReassignPalsLink">
+							<WEBOBJECT NAME="WarnImage"></WEBOBJECT> Assign secret pals!
+						</WEBOBJECT>
+					</p>
+				</div>
+			</WEBOBJECT>
+		</div>
+	</div>
+
+	<div class="separatorSections advanced" style="margin-top: 2em">
+		<div class="section">
+			<WEBOBJECT NAME="DeleteExpansion">
+				<div class="contents">
+					<p style="margin-top: 1em">
+						Deleting an event <b>can not</b> be undone.
+					</p>
+					<p>
+						<WEBOBJECT NAME="DeleteEventLink">
+							<WEBOBJECT NAME="DeleteImage2"></WEBOBJECT> Delete this event!
+						</WEBOBJECT>
+					</p>
+				</div>
+			</WEBOBJECT>
+		</div>
+	</div>
+</WEBOBJECT>

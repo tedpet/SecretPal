@@ -1,0 +1,44 @@
+PageWrapperComponent: PageWrapper {
+    title = "Make a New Group";
+}
+
+BreadcrumbTemplate: ERXWOTemplate {
+    templateName = "breadcrumb";
+}
+
+HomeLink: ERXDataHyperlink {
+    pageName = "SPHomePage";
+}
+
+IsNewGroupCheck: WOConditional {
+    condition = group.isNewObject;
+}
+
+IsExistingGroupCheck: WOConditional {
+    condition = group.isNewObject;
+    negate = true;
+}
+
+GroupNameString: WOString {
+    value = group.name;
+}
+
+GroupForm: WOForm {
+}
+
+GroupNameField: WOTextField {
+    value = group.name;
+}
+
+GroupDescriptionField: WOTextField {
+    value = group.description;
+}
+
+AddGroupButton: WOSubmitButton {
+    action = addGroup;
+    value = "Do It";
+}
+
+CancelLink: ERXDataHyperlink {
+    pageName = "SPHomePage";
+}

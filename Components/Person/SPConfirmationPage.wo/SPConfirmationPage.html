@@ -1,13 +1,13 @@
-<wo:PageWrapper title="Accept Your Invitation" hideBreadcrumb="$true">
+<WEBOBJECT NAME="PageWrapperComponent">
 	<div class="panel">
-		<div class="title">Accept Your Invitation to <wo:str value="$membership.group.name"/></div>
-		
+		<div class="title">Accept Your Invitation to <WEBOBJECT NAME="GroupNameString"></WEBOBJECT></div>
+
 		<div class="contents">
-			<wo:form>
-				<wo:not condition="$membership.person.anyMembershipsConfirmed">
+			<WEBOBJECT NAME="AcceptForm">
+				<WEBOBJECT NAME="NoNameCheck">
 					<div class="row">
 						<span class="label">Your Name</span>
-						<wo:textfield value="$membership.person.name"/>
+						<WEBOBJECT NAME="NameField"></WEBOBJECT>
 					</div>
 
 					<div class="row">
@@ -16,25 +16,25 @@
 							You can use your full name here. For example: "John Smith" or "Mary Smith"
 						</p>
 					</div>
-				</wo:not>
+				</WEBOBJECT>
 
-				<wo:not condition="$membership.person.password">
+				<WEBOBJECT NAME="NoPasswordCheck">
 					<div class="row">
 						<span class="label">Password</span>
-						<wo:password value="$password"/>
+						<WEBOBJECT NAME="PasswordField"></WEBOBJECT>
 					</div>
 
 					<div class="row">
 						<span class="label">Confirm</span>
-						<wo:password value="$confirmPassword"/>
+						<WEBOBJECT NAME="ConfirmPasswordField"></WEBOBJECT>
 					</div>
-				</wo:not>
+				</WEBOBJECT>
 
 				<div class="row">
-					<wo:submit action="$accept" value="Accept Invitation"/>
-					<wo:submit action="$decline" value="Decline Invitation" onclick="return confirm('Are you sure you want to decline this invitation?')"/>
+					<WEBOBJECT NAME="AcceptButton"></WEBOBJECT>
+					<WEBOBJECT NAME="DeclineButton"></WEBOBJECT>
 				</div>
-			</wo:form>
+			</WEBOBJECT>
 		</div>
 	</div>
-</wo:PageWrapper>
+</WEBOBJECT>

@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 
 import com.secretpal.components.application.Main;
 import com.secretpal.components.application.SPPage;
-import com.secretpal.components.group.SPHomePage;
 import com.secretpal.model.SPPerson;
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;

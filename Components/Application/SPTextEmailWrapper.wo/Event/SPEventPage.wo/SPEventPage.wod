@@ -1,0 +1,62 @@
+PageWrapperComponent: PageWrapper {
+    title = event.name;
+}
+
+BreadcrumbTemplate: ERXWOTemplate {
+    templateName = "breadcrumb";
+}
+
+HomeLink: ERXDataHyperlink {
+    pageName = "SPHomePage";
+}
+
+GroupLink: ERXDataHyperlink {
+    pageName = "SPGroupPage";
+    group = event.group;
+}
+
+GroupNameString: WOString {
+    value = event.group.name;
+}
+
+HasSecretPalsCheck: WOConditional {
+    condition = secretPals.count;
+}
+
+SecretPalsLoop: WORepetition {
+    list = secretPals;
+    item = secretPal;
+}
+
+ExpandSecretPalsLink: WOHyperlink {
+    action = expandSecretPals;
+}
+
+SecretPalNameString: WOString {
+    value = secretPal.name;
+}
+
+NoSecretPalsCheck: WOConditional {
+    condition = secretPals.count;
+    negate = true;
+}
+
+MembershipsLoop: WORepetition {
+    list = event.group.memberships.@sortAsc.personName;
+    item = membership;
+}
+
+MembershipWishes: SPMembershipWishes {
+    membership = membership;
+    expanded = expanded;
+    secretPal = isMembershipSecretPal;
+}
+
+CanEditCheck: WOConditional {
+    condition = canEdit;
+}
+
+EventEditLink: ERXDataHyperlink {
+    pageName = "SPEventEditPage";
+    event = event;
+}

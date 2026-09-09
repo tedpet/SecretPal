@@ -1,0 +1,150 @@
+PageWrapperComponent: PageWrapper {
+    title = "Edit Group";
+}
+
+BreadcrumbTemplate: ERXWOTemplate {
+    templateName = "breadcrumb";
+}
+
+HomeLink: ERXDataHyperlink {
+    pageName = "SPHomePage";
+}
+
+EditForm: WOForm {
+}
+
+GroupNameField: WOTextField {
+    value = group.name;
+}
+
+GroupDescriptionField: WOTextField {
+    value = group.description;
+}
+
+SaveGroupButton: WOSubmitButton {
+    action = saveGroup;
+    value = "Save Your Changes";
+}
+
+EventsLoop: WORepetition {
+    list = group.events;
+    item = event;
+}
+
+HasSecretPalsCheck: WOConditional {
+    condition = event.hasAssignedSecretPals;
+}
+
+OkImage: WOImage {
+    filename = "icon_ok.png";
+    title = "Everything's ready to go!";
+}
+
+NoSecretPalsCheck: WOConditional {
+    condition = event.hasAssignedSecretPals;
+    negate = true;
+}
+
+WarnImage: WOImage {
+    filename = "icon_warn.png";
+    title = "You haven't assigned secret pals yet.";
+}
+
+EventEditLink: ERXDataHyperlink {
+    pageName = "SPEventEditPage";
+    event = event;
+}
+
+EventNameString: WOString {
+    value = event.name;
+}
+
+NewEventLink: ERXDataHyperlink {
+    pageName = "SPEventNewPage";
+    group = group;
+}
+
+MembershipsLoop: WORepetition {
+    list = group.memberships.@sortAsc.personName;//valid
+    item = membership;
+}
+
+CanDeleteMembershipCheck: WOConditional {
+    condition = canDeleteMembership;
+}
+
+DeleteMembershipLink: WOHyperlink {
+    action = deleteMembership;
+    onclick = "return confirm('Are you sure you want to remove this person from your group?')";
+}
+
+DeleteButtonImage: WOImage {
+    filename = "btn_del.png";
+}
+
+CannotDeleteMembershipCheck: WOConditional {
+    condition = canDeleteMembership;
+    negate = true;
+}
+
+DeleteButtonDisabledImage: WOImage {
+    filename = "btn_del_disabled.png";
+}
+
+StatusImage: WOImage {
+    filename = statusImage;
+    title = statusMessage;
+}
+
+MembershipPersonNameString: WOString {
+    value = membership.personName;
+}
+
+NotConfirmedCheck: WOConditional {
+    condition = membership.confirmed;
+    negate = true;
+}
+
+ResendInvitationLink: WOHyperlink {
+    action = resendInvitation;
+}
+
+HasConfirmationCodeCheck: WOConditional {
+    condition = membership.confirmationCode;
+}
+
+ConfirmationLink: WOHyperlink {
+    href = confirmationUrl;
+    target = "_blank";
+}
+
+InviteForm: WOForm {
+}
+
+InviteEmailAddressesField: WOText {
+    value = inviteEmailAddresses;
+    rows = 5;
+    cols = 100;
+}
+
+SendInvitesButton: WOSubmitButton {
+    action = sendMembershipInvites;
+    value = "Send Invites";
+}
+
+DeleteExpansion: AjaxExpansion {
+    linkClass = "toggle";
+    insertion = "Effect.blind";
+    insertionDuration = "0.05";
+    string = "Delete";
+}
+
+DeleteGroupLink: WOHyperlink {
+    action = deleteGroup;
+    onclick = "return confirm('You are about to delete this group and all the events and memberships associated with it. This can not be undone.')";
+}
+
+DeleteGroupImage: WOImage {
+    filename = "btn_del.png";
+    style = "vertical-align: middle";
+}

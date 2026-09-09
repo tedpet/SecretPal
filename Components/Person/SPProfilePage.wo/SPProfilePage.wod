@@ -1,0 +1,36 @@
+PageWrapperComponent: PageWrapper {
+    title = "Profile";
+    hideBreadcrumb = true;
+}
+
+ProfileForm: WOForm {
+}
+
+NameField: WOTextField {
+    value = person.name;
+}
+
+EmailField: WOTextField {
+    value = person.emailAddress;
+}
+
+CurrentPasswordField: WOPasswordField {
+    value = currentPassword;
+}
+
+PasswordField: WOPasswordField {
+    value = password;
+}
+
+ConfirmPasswordField: WOPasswordField {
+    value = confirmPassword;
+}
+
+UpdateProfileButton: WOSubmitButton {
+    action = updateProfile;
+    value = "Update Profile";
+}
+
+CancelLink: WOHyperlink {
+    pageName = "SPHomePage";
+}

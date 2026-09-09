@@ -1,0 +1,128 @@
+PageWrapperComponent: PageWrapper {
+    title = "Edit Event";
+}
+
+BreadcrumbTemplate: ERXWOTemplate {
+    templateName = "breadcrumb";
+}
+
+HomeLink: ERXDataHyperlink {
+    pageName = "SPHomePage";
+}
+
+GroupLink: ERXDataHyperlink {
+    pageName = "SPGroupPage";
+    group = event.group;
+}
+
+GroupNameString: WOString {
+    value = event.group.name;
+}
+
+EventForm: WOForm {
+}
+
+EventNameField: WOTextField {
+    value = event.name;
+}
+
+EventDescriptionField: WOTextField {
+    value = event.description;
+}
+
+SaveEventButton: WOSubmitButton {
+    action = saveEvent;
+    value = "Save Your Changes";
+}
+
+MembershipsLoop: WORepetition {
+    list = event.group.memberships.@sortAsc.personName;
+    item = membership;
+}
+
+NoNoForm: WOForm {
+}
+
+MembershipPersonNameString: WOString {
+    value = membership.personName;
+}
+
+NoNoPersonPopup: WOPopUpButton {
+    list = noNoPersonPossibilities.@sortAsc.name;
+    item = noNoPerson;
+    selection = selectedNoNoPerson;
+    displayString = noNoPersonMembership.personName;
+    noSelectionString = "-- Pick a Person --";
+}
+
+AddNoNoPalButton: WOSubmitButton {
+    action = addNoNoPal;
+    value = "Add";
+    class = "mini";
+}
+
+HasNoNoPalsCheck: WOConditional {
+    condition = noNoPals.count;
+}
+
+NoNoPalsLoop: WORepetition {
+    list = noNoPals;
+    item = noNoPal;
+}
+
+RemoveNoNoPalLink: WOHyperlink {
+    action = removeNoNoPal;
+    onclick = "return confirm('Are you sure you want to remove this No-No recipient?')";
+}
+
+DeleteImage: WOImage {
+    filename = "btn_del.png";
+}
+
+ReceiverNameString: WOString {
+    value = noNoPal.receiverMembership.personName;
+}
+
+AssignPalsExpansion: AjaxExpansion {
+    linkClass = "toggle";
+    insertion = "Effect.blind";
+    insertionDuration = "0.05";
+    string = "Assign Secret Pals";
+    initiallyExpanded = event.hasNotAssignedSecretPals;
+}
+
+HasAssignedPalsCheck: WOConditional {
+    condition = event.hasAssignedSecretPals;
+}
+
+HasNotAssignedPalsCheck: WOConditional {
+    condition = event.hasAssignedSecretPals;
+    negate = true;
+}
+
+ReassignPalsLink: WOHyperlink {
+    action = reassignSecretPals;
+    onclick = "return confirm('You are about to replace all secret pal assignments. This can not be undone.')";
+}
+
+WarnImage: WOImage {
+    filename = "icon_warn.png";
+    style = "vertical-align: middle";
+}
+
+DeleteExpansion: AjaxExpansion {
+    linkClass = "toggle";
+    insertion = "Effect.blind";
+    insertionDuration = "0.05";
+    string = "Delete";
+}
+
+DeleteEventLink: WOHyperlink {
+    action = deleteEvent;
+    onclick = "return confirm('You are about to delete this event. This can not be undone.')";
+}
+
+DeleteImage2: WOImage {
+    filename = "btn_del.png";
+    style = "vertical-align: middle";
+}

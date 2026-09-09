@@ -3,6 +3,8 @@ module com.secretpal.SecretPal {
 	exports com.secretpal.migrations;
 	exports com.secretpal.model;
 	exports com.secretpal.components.application;
+	exports com.secretpal.components.event;
+	exports com.secretpal.components.person;
 	
 	requires org.slf4j;
 	requires org.wocommunity.webobjects.directtoweb;

@@ -3,7 +3,6 @@ package com.secretpal.components.group;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.secretpal.components.application.PageWrapper;
 import com.secretpal.components.application.SPPage;
 import com.secretpal.model.SPEvent;
 import com.secretpal.model.SPGroup;

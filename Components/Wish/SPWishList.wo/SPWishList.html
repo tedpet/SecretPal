@@ -1,32 +1,32 @@
-<wo:WOGenericContainer elementName="div" class="$divClass">
-	<wo:if condition="$list.count">
-		<h3><wo:str value="$itemName"/></h3>
+<WEBOBJECT NAME="SPWishListContainer">
+	<WEBOBJECT NAME="HasItemsCheck">
+		<h3><WEBOBJECT NAME="ItemNameString"></WEBOBJECT></h3>
 		<table>
-		<wo:WORepetition list="$list" item="$wish">
-			<wo:if condition="$showPurchased">
+		<WEBOBJECT NAME="WishesLoop">
+			<WEBOBJECT NAME="ShowPurchasedCheck">
 				<tr class="purchased">
 					<td class="actions">
-						<wo:if condition="$canDelete"><wo:AjaxUpdateLink updateContainerID="_parent" action="$deleteWish" onClickBefore="confirm('Are you sure you want to delete this item?')" title="delete this item"><wo:WOImage filename="btn_del.png"/></wo:AjaxUpdateLink></wo:if>
-						<wo:else><wo:WOImage filename="btn_del_disabled.png"/></wo:else>
-						<wo:AjaxUpdateLink updateContainerID="_parent" action="$togglePurchased" title="mark this item NOT purchased"><wo:WOImage filename="unbuy.png"/></wo:AjaxUpdateLink>
+						<WEBOBJECT NAME="CanDeleteCheck"><WEBOBJECT NAME="DeleteWishLink"><WEBOBJECT NAME="DeleteImage"></WEBOBJECT></WEBOBJECT></WEBOBJECT>
+						<WEBOBJECT NAME="CannotDeleteCheck"><WEBOBJECT NAME="DeleteDisabledImage"></WEBOBJECT></WEBOBJECT>
+						<WEBOBJECT NAME="UnbuyLink"><WEBOBJECT NAME="UnbuyImage"></WEBOBJECT></WEBOBJECT>
 					</td>
-					<td class="item"><wo:not condition="$wish.desire"><wo:str value="$wish.suggestedBy.name"/> suggests </wo:not><wo:str value="$wish.description"/></td>
+					<td class="item"><WEBOBJECT NAME="NotDesireCheck"><WEBOBJECT NAME="SuggestedByString"></WEBOBJECT> suggests </WEBOBJECT><WEBOBJECT NAME="DescriptionString"></WEBOBJECT></td>
 				</tr>
-			</wo:if>
-			<wo:else>
+			</WEBOBJECT>
+			<WEBOBJECT NAME="NotShowPurchasedCheck">
 				<tr>
 					<td class="actions">
-						<wo:if condition="$canDelete"><wo:AjaxUpdateLink updateContainerID="_parent" action="$deleteWish" onClickBefore="confirm('Are you sure you want to delete this item?')" title="delete this item"><wo:WOImage filename="btn_del.png"/></wo:AjaxUpdateLink></wo:if>
-						<wo:else><wo:WOImage filename="btn_del_disabled.png"/></wo:else>
-						<wo:not condition="$me"><wo:AjaxUpdateLink updateContainerID="_parent" action="$togglePurchased" title="mark this item purchased"><wo:WOImage filename="buy.png"/></wo:AjaxUpdateLink></wo:not>
+						<WEBOBJECT NAME="CanDeleteCheck2"><WEBOBJECT NAME="DeleteWishLink2"><WEBOBJECT NAME="DeleteImage2"></WEBOBJECT></WEBOBJECT></WEBOBJECT>
+						<WEBOBJECT NAME="CannotDeleteCheck2"><WEBOBJECT NAME="DeleteDisabledImage2"></WEBOBJECT></WEBOBJECT>
+						<WEBOBJECT NAME="NotMeCheck"><WEBOBJECT NAME="BuyLink"><WEBOBJECT NAME="BuyImage"></WEBOBJECT></WEBOBJECT></WEBOBJECT>
 					</td>
-					<td class="item"><wo:not condition="$wish.desire"><wo:str value="$wish.suggestedBy.name"/> suggests </wo:not><wo:str value="$wish.description"/></td>
+					<td class="item"><WEBOBJECT NAME="NotDesireCheck2"><WEBOBJECT NAME="SuggestedByString2"></WEBOBJECT> suggests </WEBOBJECT><WEBOBJECT NAME="DescriptionString2"></WEBOBJECT></td>
 				</tr>
-			</wo:else>
-		</wo:WORepetition>
+			</WEBOBJECT>
+		</WEBOBJECT>
 		</table>
-	</wo:if>
-	<wo:else>
-		<h3>No <wo:str value="$itemName"/></h3>
-	</wo:else>
-</wo:WOGenericContainer>
+	</WEBOBJECT>
+	<WEBOBJECT NAME="NoItemsCheck">
+		<h3>No <WEBOBJECT NAME="ItemNameString2"></WEBOBJECT></h3>
+	</WEBOBJECT>
+</WEBOBJECT>

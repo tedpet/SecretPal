@@ -1,0 +1,98 @@
+SectionContainer: WOGenericContainer {
+    elementName = "div";
+    class = sectionClass;
+}
+
+MemberExpansion: AjaxExpansion {
+    class = "member";
+    linkClass = "toggle";
+    insertion = "Effect.blind";
+    insertionDuration = "0.05";
+    string = personName;
+    expanded = ^expanded;
+}
+
+IsMeCheck: WOConditional {
+    condition = me;
+}
+
+NoDesiresCheck: WOConditional {
+    condition = membership.person.desires.count;
+    negate = true;
+}
+
+BuyImage: WOImage {
+    filename = "buy.png";
+    style = "vertical-align: middle";
+}
+
+HasDesiresCheck: WOConditional {
+    condition = membership.person.desires.count;
+}
+
+WishListForMe: SPWishList {
+    divClass = "wishes";
+    list = membership.person.desires;
+    me = me;
+    itemName = "Wishes";
+}
+
+NotMeCheck: WOConditional {
+    condition = me;
+    negate = true;
+}
+
+WishListForOther: SPWishList {
+    divClass = "wishes";
+    list = membership.person.desires;
+    me = me;
+    itemName = "Wishes";
+}
+
+IsNotMeCheck: WOConditional {
+    condition = isMe;
+    negate = true;
+}
+
+SuggestionsList: SPWishList {
+    divClass = "suggestions";
+    list = membership.person.suggestions;
+    me = me;
+    itemName = "Suggestions";
+}
+
+SuggestionForm: WOForm {
+    onsubmit = "return false";
+}
+
+AddSuggestionButton: AjaxSubmitButton {
+    functionName = addSuggestionFunctionName;
+    updateContainerID = "_parent";
+    action = addSuggestion;
+}
+
+SuggestionTextField: FocusTextField {
+    value = suggestion;
+    class = "suggestion";
+    focus = false;
+    onEnter = addSuggestionFunctionCall;
+}
+
+IsMeCheck2: WOConditional {
+    condition = isMe;
+}
+
+WishForButton: AjaxFunctionButton {
+    onclick = addSuggestionFunctionCall;
+    value = "wish for";
+}
+
+IsNotMeCheck2: WOConditional {
+    condition = isMe;
+    negate = true;
+}
+
+SuggestButton: AjaxFunctionButton {
+    onclick = addSuggestionFunctionCall;
+    value = "suggest";
+}

@@ -1,0 +1,44 @@
+PageWrapperComponent: PageWrapper {
+    title = "Accept Your Invitation";
+    hideBreadcrumb = true;
+}
+
+GroupNameString: WOString {
+    value = membership.group.name;
+}
+
+AcceptForm: WOForm {
+}
+
+NoNameCheck: WOConditional {
+    condition = membership.person.anyMembershipsConfirmed;
+    negate = true;
+}
+
+NameField: WOTextField {
+    value = membership.person.name;
+}
+
+NoPasswordCheck: WOConditional {
+    condition = membership.person.password;
+    negate = true;
+}
+
+PasswordField: WOPasswordField {
+    value = password;
+}
+
+ConfirmPasswordField: WOPasswordField {
+    value = confirmPassword;
+}
+
+AcceptButton: WOSubmitButton {
+    action = accept;
+    value = "Accept Invitation";
+}
+
+DeclineButton: WOSubmitButton {
+    action = decline;
+    value = "Decline Invitation";
+    onclick = "return confirm('Are you sure you want to decline this invitation?')";
+}

@@ -1,0 +1,15 @@
+SPEmailWrapperComponent: SPEmailWrapper {
+    title = "Invitation";
+}
+
+GroupNameString: WOString {
+    value = membership.group.name;
+}
+
+OwnerNameString: WOString {
+    value = membership.group.owner.name;
+}
+
+ConfirmationLink: WOHyperlink {
+    href = confirmationUrl;
+}

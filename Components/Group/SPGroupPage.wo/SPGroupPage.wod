@@ -1,0 +1,59 @@
+PageWrapperComponent: PageWrapper {
+    title = group.name;
+}
+
+BreadcrumbTemplate: ERXWOTemplate {
+    templateName = "breadcrumb";
+}
+
+HomeLink: ERXDataHyperlink {
+    pageName = "SPHomePage";
+}
+
+GroupDescriptionCheck: WOConditional {
+    condition = group.description;
+}
+
+GroupDescriptionString: WOString {
+    value = group.description;
+}
+
+GroupNameString: WOString {
+    value = group.name;
+}
+
+EventsLoop: WORepetition {
+    list = group.events;
+    item = event;
+}
+
+EventLink: ERXDataHyperlink {
+    pageName = "SPEventPage";
+    event = event;
+}
+
+EventNameString: WOString {
+    value = event.name;
+}
+
+EventDescriptionCheck: WOConditional {
+    condition = event.description;
+}
+
+EventDescriptionString: WOString {
+    value = event.description;
+}
+
+CanEditCheck: WOConditional {
+    condition = canEdit;
+}
+
+GroupEditLink: ERXDataHyperlink {
+    pageName = "SPGroupEditPage";
+    group = group;
+}
+
+NewEventLink: ERXDataHyperlink {
+    pageName = "SPEventNewPage";
+    group = group;
+}

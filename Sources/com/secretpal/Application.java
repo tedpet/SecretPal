@@ -24,6 +24,7 @@ public class Application extends ERXApplication {
 	}
 
 	public Application() {
+		LOG.debug("Application of the Application setDefaultRequestHandler...");
 		setDefaultRequestHandler(requestHandlerForKey(directActionRequestHandlerKey()));
 		setAllowsConcurrentRequestHandling(true);
 	}
