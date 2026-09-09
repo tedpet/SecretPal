@@ -1,0 +1,18 @@
+HasNoticesCheck: WOConditional {
+    condition = noticeList.notices.count;
+}
+
+NoticesContainer: WOGenericContainer {
+    elementName = "div";
+    class = ^class;
+}
+
+NoticesLoop: WORepetition {
+    list = noticeList.notices;
+    item = notice;
+}
+
+NoticeString: WOString {
+    value = notice;
+    escapeHTML = false;
+}

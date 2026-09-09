@@ -1,0 +1,6 @@
+TitleString: WOString {
+    value = ^title;
+}
+
+ComponentContent: WOComponentContent {
+}

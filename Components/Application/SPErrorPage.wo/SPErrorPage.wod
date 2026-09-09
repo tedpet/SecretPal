@@ -1,0 +1,12 @@
+PageWrapperComponent: PageWrapper {
+    title = "Oh No!";
+    hideBreadcrumb = true;
+}
+
+GoBackLink: WOHyperlink {
+    directActionName = "default";
+}
+
+ExceptionMessageString: WOString {
+    value = exception.message;
+}

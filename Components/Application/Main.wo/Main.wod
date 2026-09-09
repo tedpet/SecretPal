@@ -1,0 +1,13 @@
+PageWrapperComponent: PageWrapper {
+    title = "Login";
+    hideBreadcrumb = true;
+}
+
+LoginForm: WOForm {
+    directActionName = "login";
+    secure = true;
+}
+
+ForgotPasswordLink: WOHyperlink {
+    directActionName = "forgotPassword";
+}

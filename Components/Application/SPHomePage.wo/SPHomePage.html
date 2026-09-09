@@ -1,0 +1,45 @@
+<WEBOBJECT NAME="PageWrapperComponent">
+	<div class="separatorSections">
+		<div class="section">
+			All your groups and events are listed below. Select one to see your secret pals and get gift ideas.
+		</div>
+
+		<WEBOBJECT NAME="MembershipsLoop">
+			<WEBOBJECT NAME="MembershipContainer">
+				<WEBOBJECT NAME="NotConfirmedCheck">
+					<h1><WEBOBJECT NAME="GroupNameString"></WEBOBJECT></h1>
+					<WEBOBJECT NAME="GroupDescriptionCheck">
+						<p><WEBOBJECT NAME="GroupDescriptionString"></WEBOBJECT></p>
+					</WEBOBJECT>
+					You have not accepted this invitation from <WEBOBJECT NAME="GroupOwnerNameString"></WEBOBJECT>. Would you like to <WEBOBJECT NAME="AcceptInvitationLink">accept</WEBOBJECT> or <WEBOBJECT NAME="DeclineInvitationLink">decline</WEBOBJECT>?
+				</WEBOBJECT>
+				<WEBOBJECT NAME="ConfirmedCheck">
+					<h1><WEBOBJECT NAME="GroupPageLink"><WEBOBJECT NAME="GroupNameString2"></WEBOBJECT></WEBOBJECT></h1>
+					<WEBOBJECT NAME="GroupDescriptionCheck2">
+						<p><WEBOBJECT NAME="GroupDescriptionString2"></WEBOBJECT></p>
+					</WEBOBJECT>
+					<WEBOBJECT NAME="CanEditCheck">
+					<p>
+						You are the owner of this group, so you can <WEBOBJECT NAME="GroupEditLink">edit it</WEBOBJECT>
+						to change its name and manage members.
+					</p>
+					</WEBOBJECT>
+					<ul>
+						<WEBOBJECT NAME="EventsLoop">
+							<li>
+								<WEBOBJECT NAME="EventLink"><WEBOBJECT NAME="EventNameString"></WEBOBJECT></WEBOBJECT>
+								<WEBOBJECT NAME="EventDescriptionCheck">
+									<p><WEBOBJECT NAME="EventDescriptionString"></WEBOBJECT></p>
+								</WEBOBJECT>
+							</li>
+						</WEBOBJECT>
+					</ul>
+				</WEBOBJECT>
+			</WEBOBJECT>
+		</WEBOBJECT>
+
+		<div class="section callout">
+			You can <WEBOBJECT NAME="ProfileLink">update your profile</WEBOBJECT>, or even <WEBOBJECT NAME="NewGroupLink">make your own groups</WEBOBJECT>.
+		</div>
+	</div>
+</WEBOBJECT>

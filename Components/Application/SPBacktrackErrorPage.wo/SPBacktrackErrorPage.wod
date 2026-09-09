@@ -1,0 +1,8 @@
+PageWrapperComponent: PageWrapper {
+    title = "Your Session Expired";
+    hideBreadcrumb = true;
+}
+
+LoginAgainLink: WOHyperlink {
+    directActionName = "default";
+}

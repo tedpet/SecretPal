@@ -1,0 +1,20 @@
+er.javamail.centralize=true
+er.extensions.ERXRequest.secureDisabled=true
+
+
+
+dbConnectUserGLOBAL=wouser
+dbConnectPasswordGLOBAL=4004
+dbConnectURLGLOBAL=jdbc:postgresql://localhost/secretpal?capitalizeTypenames=true&zeroDateTimeBehavior=convertToNull
+dbConnectPluginGLOBAL=PostgresqlPlugIn
+dbConnectDriverGLOBAL=org.postgresql.Driver
+dbEOPrototypesEntityGLOBAL=EOJDBCPostgresqlPrototypes
+
+
+# Migrations
+er.migration.migrateAtStartup=true
+er.migration.createTablesIfNecessary=true
+er.migration.modelNames=ERAttachment,SecretPal
+
+SecretPal.MigrationClassPrefix=com.secretpal.migrations.SecretPal
+
