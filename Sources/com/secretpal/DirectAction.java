@@ -36,9 +36,7 @@ public class DirectAction extends ERXDirectAction {
 
 	@Override
 	public WOActionResults defaultAction() {
-		
-		LOG.debug("defaultAction() in DirectActions called");
-		
+				
 		WOActionResults nextPage;
 		if (session().currentPerson() != null) {
 			nextPage = pageWithName(SPHomePage.class);
@@ -70,7 +68,6 @@ public class DirectAction extends ERXDirectAction {
 	}
 
 	public WOActionResults loginAction() {
-		LOG.debug("loginAction() emailAddress = ");	
 		session().logout();
 		String emailAddress = request().stringFormValueForKey("emailAddress");
 		System.out.println("emailAddress = " + emailAddress);

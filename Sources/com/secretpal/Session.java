@@ -31,7 +31,6 @@ public class Session extends ERXSession {
 	}
 
 	public void setCurrentPerson(SPPerson currentPerson) {
-		LOG.debug("setCurrentPerson in Session to {}", currentPerson);
 		_currentPerson = currentPerson;
 	}
 

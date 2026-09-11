@@ -13,12 +13,10 @@ public class PageWrapper extends SPComponent {
 
 	public PageWrapper(WOContext context) {
 		super(context);
-		LOG.debug("PageWrapper");
 	}
 
 	public D2WContext d2wContext() {
 		
-		LOG.debug("D2WContext in the PageWrapper");
 		if (context().page() instanceof D2WPage) {
 			D2WPage d2wPage = (D2WPage) context().page();
 			return d2wPage.d2wContext();
@@ -34,8 +32,6 @@ public class PageWrapper extends SPComponent {
 	@Override
 	protected void checkAccess() throws SecurityException {
 		
-		LOG.debug("checkAccess() in the PageWrapper");
-
 		if (context().page() instanceof D2WPage && (session().currentPerson() == null || !session().currentPerson().admin().booleanValue())) {
 			throw new SecurityException("You must be an administrator to access this page.");
 		}
