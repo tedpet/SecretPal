@@ -5,6 +5,8 @@ module com.secretpal.SecretPal {
 	exports com.secretpal.components.application;
 	exports com.secretpal.components.event;
 	exports com.secretpal.components.person;
+	exports com.secretpal.components.wish;
+	exports com.secretpal.components.group;
 	
 	requires org.slf4j;
 	requires org.wocommunity.webobjects.directtoweb;

@@ -26,7 +26,7 @@ wolips.password=wo
 # ERJavaMail
 er.javamail.adminEmail=your@youremail.com
 er.javamail.debugEnabled=false
-er.javamail.smtpHost=your.smtp.com
+er.javamail.smtpHost=your.bigsmtp.com
 er.javamail.smtpAuth=false
 er.javamail.smtpUser=
 er.javamail.smtpPassword=

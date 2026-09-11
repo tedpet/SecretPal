@@ -5,7 +5,7 @@ PageWrapperComponent: PageWrapper {
 
 LoginForm: WOForm {
     directActionName = "login";
-    secure = true;
+    secure = false;
 }
 
 ForgotPasswordLink: WOHyperlink {

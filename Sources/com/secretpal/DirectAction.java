@@ -53,6 +53,7 @@ public class DirectAction extends ERXDirectAction {
 	}
 
 	public WOActionResults forgotPasswordAction() {
+		
 		return pageWithName(SPForgotPasswordPage.class);
 	}
 
@@ -69,8 +70,8 @@ public class DirectAction extends ERXDirectAction {
 	}
 
 	public WOActionResults loginAction() {
+		LOG.debug("loginAction() emailAddress = ");	
 		session().logout();
-		
 		String emailAddress = request().stringFormValueForKey("emailAddress");
 		System.out.println("emailAddress = " + emailAddress);
 		String password = request().stringFormValueForKey("password");

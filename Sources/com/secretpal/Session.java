@@ -1,5 +1,8 @@
 package com.secretpal;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.secretpal.model.SPPerson;
 
 import er.extensions.appserver.ERXSession;
@@ -10,6 +13,7 @@ public class Session extends ERXSession {
 	private SPPerson _currentPerson;
 	private SPNoticeList _errors;
 	private SPNoticeList _notifications;
+	private static final Logger LOG = LoggerFactory.getLogger(Session.class);
 
 	public Session() {
 		_errors = new SPNoticeList();
@@ -27,6 +31,7 @@ public class Session extends ERXSession {
 	}
 
 	public void setCurrentPerson(SPPerson currentPerson) {
+		LOG.debug("setCurrentPerson in Session to {}", currentPerson);
 		_currentPerson = currentPerson;
 	}
 

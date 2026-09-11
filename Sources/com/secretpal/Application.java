@@ -19,12 +19,10 @@ public class Application extends ERXApplication {
 
 	public static void main(String[] argv) {
 		
-		LOG.debug("Main of the Application");
 		ERXApplication.main(argv, Application.class);
 	}
 
 	public Application() {
-		LOG.debug("Application of the Application setDefaultRequestHandler...");
 		setDefaultRequestHandler(requestHandlerForKey(directActionRequestHandlerKey()));
 		setAllowsConcurrentRequestHandling(true);
 	}

@@ -20,13 +20,15 @@ public class Main extends SPPage {
 	@Override
 	public void appendToResponse(WOResponse response, WOContext context) {
 		
-		LOG.debug("appendToResponse response = {}", response);
 		if (session().currentPerson() != null) {
+			LOG.debug("session().currentPerson() is no null and is: {}", session().currentPerson());
 			ERXRedirect redirect = pageWithName(ERXRedirect.class);
 			redirect.setDirectActionName("default");
 			redirect.appendToResponse(response, context);
 		}
 		else {
+			LOG.debug("appendToResponse response = {}", response);
+
 			super.appendToResponse(response, context);
 		}
 	}
